@@ -2,59 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Luffy vs Katakuri - Intro</title>
+  <title>Luffy vs Katakuri - Showdown Intro</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: black;
-      overflow: hidden;
       font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      background: black;
       color: white;
     }
 
-    .intro-container {
-      position: relative;
-      height: 100vh;
-      background: url('https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif') center center / cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.4);
     }
 
     .intro-text {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
       animation: fadeIn 2s ease-in-out;
     }
 
-    h1 {
-      font-size: 3em;
+    .intro-text h1 {
+      font-size: 4em;
       margin: 0;
       color: crimson;
+      text-shadow: 0 0 10px red;
     }
 
-    p {
+    .intro-text p {
       font-size: 1.5em;
-      margin-top: 10px;
+      margin-top: 15px;
+      color: #eee;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
+      from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
   </style>
 </head>
 <body>
 
-  <div class="intro-container">
-    <div class="intro-text">
-      <h1>Luffy vs Katakuri</h1>
-      <p>The Mirror World Showdown Begins!</p>
-    </div>
+  <!-- Background Video -->
+  <video class="bg-video" autoplay muted loop>
+    <source src="https://cdn.pixabay.com/video/2023/07/13/173328-842947317_large.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Text Overlay -->
+  <div class="intro-text">
+    <h1>Luffy vs Katakuri</h1>
+    <p>Clash of Observation Haki Legends</p>
   </div>
+
+  <!-- Sound Effect -->
+  <audio autoplay>
+    <source src="https://actions.google.com/sounds/v1/impacts/fighting_whoosh.ogg" type="audio/ogg">
+  </audio>
 
 </body>
 </html>
